@@ -1,0 +1,24 @@
+网页源代码分析
+（1）job_category
+div id=categs-nav
+    ul
+        li id=nlp
+        li id=machine-learning
+        li id=data-mining
+        li id=search-enging
+        li id=recommend-system
+        li id=compute-ad
+        li id=big-data class=selected
+（2）job_detail
+div id=job-details
+    h2>img:alt=全职
+      [job title text]
+    p>strong[company]/>a[company]
+      strong[location]
+    div id=job-description
+      >p
+      >p
+      .
+      .
+      .
+      >p
