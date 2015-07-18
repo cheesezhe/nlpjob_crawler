@@ -1,5 +1,6 @@
 ÍøÒ³Ô´´úÂë·ÖÎö
-£¨1£©job_category
+£¨1£©job_category:
+<div.*?id="categs-nav.*?>.*?<ul>.*?<li.*?id=.*?class="selected">.*?<a.*?title="(.*?)">.*?
 div id=categs-nav
     ul
         li id=nlp
