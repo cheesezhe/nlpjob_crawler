@@ -1,9 +1,0 @@
-{
-    "category": "自然语言处理", 
-    "description": "<p>硕士及以上学位有丰富C++或Java开发经验，熟练使用一种脚本语言（如Python, Perl等）对概率统计和机器学习基本原理有扎实理解，熟悉常用统计模型和机器学习算法（如CRF）独立实现过复杂NLP系统（如机器翻译, Parser），做过大规模数据驱动实验，有相关论文发表优先独立实现过一个或多个相关算法（如Max-Entropy，EM，CYK Parsing等）熟悉开源工具，有相关领域经验（如Information Extraction, Question Answering, IR）者优先</p><p>jobs@mobvoi.com</p>", 
-    "title": "【出门问问】招聘NLP工程师", 
-    "company": "出门问问", 
-    "publish-time": "2014-11-10", 
-    "location": "北京", 
-    "time-type": "全职"
-}

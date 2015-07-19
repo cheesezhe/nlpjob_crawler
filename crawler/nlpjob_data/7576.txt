@@ -1,9 +1,0 @@
-{
-    "category": "其他", 
-    "description": "<p>熟悉java/C++技术、具备基于Jsp的Web开发能力.熟练掌握Ajax,jsp、html、css、javascript和dreamweaver工具进行页面开发 有良好的编程风格，掌握OO分析设计思想和设计方法 熟悉J2ee、B/S三层架构，熟练使用JSP、Servlet,理解和掌握struts、spring、hibernate、ibatis等常用的JAVA框架，并应用框架进行项目开发  掌握系统分析原理和Rose、PowerDesign、Visio等工具，有项目管理和系统架构的经验、熟悉tomcat/weblogic配置 熟悉window2003和unix环境配置及项目发布 熟悉常用数据库oracle,sqlserver2000等配置和操作，更新和维护公司数据库 良好的自学能力、团队精神，能承受较强的工作压力、计算机相关专业2年以上项目开发或项目实施经验  </p><p>请简历发至邮箱：ysq@resset.cn </p>", 
-    "title": "【锐思数据】招聘java/C++软件工程师", 
-    "company": "锐思数据", 
-    "publish-time": "2014-11-12", 
-    "location": "(不限地址)", 
-    "time-type": "全职"
-}

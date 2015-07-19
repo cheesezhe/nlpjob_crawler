@@ -4,6 +4,9 @@ __author__ = 'zhanghe'
 import urllib2
 import re
 import json
+import time
+import socket
+import httplib
 
 class NLPJOB:
     def __init__(self,pageIdx=1):
@@ -12,15 +15,32 @@ class NLPJOB:
         self.job = {}
 
     def getHtmlFromPageIdx(self):
+        print "getting html...\t",
         try:
             url = "http://www.nlpjob.com/job/"+str(self.pageIdx)+"/"
             request = urllib2.Request(url)
-            response = urllib2.urlopen(request)
+            response = urllib2.urlopen(request,timeout=30)
             self.html = response.read()
         except urllib2.URLError, e:
             return -1
-
+        except socket.timeout,e :
+            with open('nlpjob_data/timeout.txt','a+') as f:
+                f.write(str(self.pageIdx)+"\n")
+            return -1
+        except httplib.BadStatusLine,e:
+            with open('nlpjob_data/timeout.txt','a+') as f:
+                f.write(str(self.pageIdx)+"\n")
+            return -1
+        except httplib.IncompleteRead,e:
+            with open('nlpjob_data/timeout.txt','a+') as f:
+                f.write(str(self.pageIdx)+"\n")
+            return -1
+        except BaseException,e:
+            with open('nlpjob_data/timeout.txt','a+') as f:
+                f.write(str(self.pageIdx)+"\n")
+            return -1
     def getJobInfoFromHtml(self):
+        print "getting job information...\t",
         if self.html == "":
             return
         jobCategoryPattern = '<div.*?id="categs-nav.*?>.*?<ul>.*?<li.*?id=.*?class="selected">.*?<a.*?title="(.*?)">.*?'
@@ -48,16 +68,21 @@ class NLPJOB:
         self.job["publish-time"] = jobs[0][7].strip()
 
     def saveJobInfoAsJson(self):
+        print "saving job information...\t",
         encodejson = json.dumps(self.job,ensure_ascii=False,indent=4)
         filename = "nlpjob_data/"+str(self.pageIdx)+".txt"
         f = open(filename,'w')
         f.write(encodejson)
         f.close()
 
-log = open("nlpjob_data/log.txt",'w')
-for pageIdx in xrange(7426,17203):
+log = open("nlpjob_data/log.txt",'a+')
+
+f = 17245#from page index f
+t = 17246#to page index t
+
+for pageIdx in xrange(f,t):
     crawler = NLPJOB(pageIdx)
-    print "proccessing page "+str(pageIdx)+"...",
+    print "proccessing page "+str(pageIdx)+" @ "+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+"...",
     if(crawler.getHtmlFromPageIdx() != -1):
         crawler.getJobInfoFromHtml()
         crawler.saveJobInfoAsJson()
